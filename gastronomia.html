@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-Ao">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gastronomia de Angola - Portal de Turismo</title>
+    <meta name="description" content="Descubra os sabores autênticos de Angola: Mufete, Funge, Moamba e os melhores restaurantes." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="toast" id="toast">Guardado nos favoritos!</div>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Início">
+                <img src="assets/logo1.png" alt="Logotipo do Portal de Turismo de Angola">
+                <span class="brand-text"><strong> Portal de Turismo de Angola</strong></span>
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html">INÍCIO</a>
+                <a href="destinos.html">DESTINOS</a>
+                <a href="#gastronomia" class="active">GASTRONOMIA</a>
+                <a href="cultura.html">CULTURA</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="hero" style="background-image: url('assets/img/cheese-1887233.jpg');">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <h1 id="hero-title">A Rota dos Sabores de Angola</h1>
+                    <p>Do Funge ao Mufete, explore a culinária vibrante que reflete a história e a hospitalidade angolana.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pratos" class="section alt" aria-labelledby="pratos-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="pratos-title" style="color: var(--green);">Pratos que Contam Histórias</h2>
+                    <p>Uma introdução essencial à mesa angolana.</p>
+                </div>
+                <div class="grid">
+                    <article class="card" style="grid-column: span 6;">
+                        <div class="card-media" style="background-image: url('assets/img/muamba-de-galinha.jpg'); height: 300px;" role="img" aria-label="Muamba de Galinha"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Muamba de Galinha</h3>
+                            <p>Um dos pratos mais emblemáticos, feito com óleo de palma (dendê), quiabos e servido tradicionalmente com funge.</p>
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="showDetails('Muamba')">Ver Receita</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card" style="grid-column: span 6;">
+                        <div class="card-media" style="background-image: url('assets/img/Mufete\ \(Peixe\ Grelhado\).jpeg'); height: 300px;" role="img" aria-label="Mufete"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Mufete (Peixe Grelhado)</h3>
+                            <p>Típico da Ilha de Luanda, é peixe fresco grelhado acompanhado de feijão de óleo de palma, batata-doce e mandioca.</p>
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="showDetails('Mufete')">Ver Locais</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="roteiros" class="section" aria-labelledby="roteiros-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="roteiros-title">Roteiros de Sabor</h2>
+                    <p>Sugestões para degustar o melhor da culinária local.</p>
+                </div>
+                <div class="itineraries">
+                    <article class="itinerary" style="grid-column: span 4;">
+                        <h3>🐟 Rota do Peixe (Luanda/Benguela)</h3>
+                        <ul>
+                            <li>Ilha de Luanda: Melhor Mufete à beira-mar.</li>
+                            <li>Bairro do Peixe (Benguela): Mercado e restaurantes de Calulu.</li>
+                            <li>Dica: Acompanhe com Cerveja Cuca.</li>
+                        </ul>
+                    </article>
+                    <article class="itinerary" style="grid-column: span 4;">
+                        <h3>🌶️ Mercados e Especiarias (Kifangondo)</h3>
+                        <ul>
+                            <li>Manhã: Visita ao mercado para comprar jindungo, dendê e feijão.</li>
+                            <li>Tarde: Aulas de culinária para aprender a fazer Funge.</li>
+                        </ul>
+                    </article>
+                    <article class="itinerary" style="grid-column: span 4;">
+                        <h3>🍰 Sobremesas e Bebidas</h3>
+                        <ul>
+                            <li>Sobremesas: Bombó, Bolinhos de Gergelim.</li>
+                            <li>Bebidas: Kissangua, Maracujá Caseiro.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div>
+                <h4>Portal de Turismo de Angola</h4>
+                <p>Celebrando a diversidade, a beleza e a alma do nosso país.</p>
+            </div>
+            <div class="footer-links" aria-label="Links de rodapé">
+                <a href="gastronomia.html">Gastronomia</a>
+                <a href="destinos.html">Destinos</a>
+                <a href="experiencias.html">Experiências</a>
+                <a href="cultura.html">Cultura</a>
+                <a href="#informação">Informação útil</a>
+                <a href="login.php">Login</a>
+                <a href="cadastro.php">Cadastro</a>
+                <a href="contato.html">Contato</a>
+                <a href="#sobre">Sobre</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

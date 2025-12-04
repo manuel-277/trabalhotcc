@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portal de Turismo de Angola - Início</title>
+    <meta name="description" content="Descubra a riqueza natural, cultural e histórica de Angola. Destinos autênticos, roteiros, gastronomia e muito mais." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="toast" id="toast">Guardado nos favoritos!</div>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Início">
+                <img src="assets/logo1.png" alt="Logotipo do Portal de Turismo de Angola">
+                <span class="brand-text"><strong> Portal de Turismo de Angola</strong></span>
+            </a>
+
+            <!-- Botão Hambúrguer -->
+            <button class="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Navegação Principal -->
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html" class="active">INÍCIO</a>
+                <a href="provincias.html">PROVÍNCIAS</a>
+                <a href="destinos.html">DESTINOS</a>
+                <a href="cultura.html">CULTURE</a>
+                 <a href="gastronomia.html">GASTRONOMIA</a>
+                
+                <a href="contato.html">CONTATO</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('assets/img/turismo\ \(1\).jpg');">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <h1 id="hero-title"><strong>Explore Angola com</strong> Autenticidade</h1>
+                    <p>Descubra praias deslumbrantes, savanas vibrantes, tradições milenares e sabores únicos. Planeie a sua jornada pelo coração de Angola.</p>
+
+                    <div class="badges" aria-label="Destaques">
+                        <span class="badge">Turismo Em Angola</span>
+                        <span class="badge">Cultural</span>
+                        <span class="badge">Gastronomia</span>
+                        <span class="badge">Rotas</span>
+                        <span class="badge">Tradições</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Destinos em Destaque -->
+        <section id="destinos" class="section" aria-labelledby="destinos-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="destinos-title" style="color: var(--secondary-color);">Destaques dos Principais Pontos Turísticos</h2>
+                    <p>Locais imperdíveis que celebram a diversidade geográfica e cultural de Angola.</p>
+                </div>
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/queda.jpg')" role="img" aria-label="Quedas de Kalandula"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Quedas de Kalandula</h3>
+                            <div class="card-meta">
+                                <span class="pill">Malanje</span>
+                                <span class="pill">Natureza • Aventura</span>
+                                <span class="rating">★★★★★</span>
+                                <span class="price">desde $15</span>
+                            </div>
+                            <p>Uma das maiores cataratas da África, símbolo natural de Angola. Melhores vistas após a estação chuvosa.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Quedas de Kalandula')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Quedas de Kalandula')">Guardar</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/Miradouro\ da\ Lua.jpg')" role="img" aria-label="Miradouro da Lua"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Miradouro da Lua</h3>
+                            <div class="card-meta">
+                                <span class="pill">Luanda</span>
+                                <span class="pill">Natureza • Fotografia</span>
+                                <span class="rating">★★★★☆</span>
+                                <span class="price">Entrada gratuita</span>
+                            </div>
+                            <p>Formações geológicas que lembram paisagens lunares. Melhor horário: fim de tarde com luz dourada.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Miradouro da Lua')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Miradouro da Lua')">Guardar</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/Tundavala-7_reduced.jpg')" role="img" aria-label="Tundavala"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Tundavala</h3>
+                            <div class="card-meta">
+                                <span class="pill">Huíla</span>
+                                <span class="pill">Natureza • Aventura</span>
+                                <span class="rating">★★★★★</span>
+                                <span class="price">Gratuito</span>
+                            </div>
+                            <p>Desfiladeiro imponente próximo ao Lubango, com miradouros espetaculares sobre o planalto angolano.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Tundavala')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Tundavala')">Guardar</button>
+                        </div>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/bai.jpg')" role="img" aria-label="Baía Azul"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Baía Azul</h3>
+                            <div class="card-meta">
+                                <span class="pill">Benguela</span>
+                                <span class="pill">Praia • Relax</span>
+                                <span class="rating">★★★★★</span>
+                                <span class="price">Gratuito</span>
+                            </div>
+                            <p>Praia famosa de Benguela, águas calmas e cenário perfeito para famílias e descanso.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Baía Azul')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Baía Azul')">Guardar</button>
+                        </div>
+                    </article>
+
+                    <div class="card" style="grid-column: span 8; background-color: var(--primary-color); color: var(--text-light); display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; padding: 30px;">
+                        <h3 class="card-title" style="color: var(--text-light); margin-bottom: 10px;">Descubra todos os 18 Destinos e Províncias</h3>
+                        <p style="margin: 10px 0;">Praias, montanhas, desertos e cidades históricas esperam por você.</p>
+                        <div class="card-actions" style="padding: 15px 0 0;">
+                            <a href="destinos.html" class="btn btn-primary" style="background-color: var(--accent-color); border-color: var(--accent-color); color: var(--text-dark); margin-right: 10px;">Ver todos os Destinos</a>
+                            <a href="provincias.html" class="btn btn-outline" style="border-color: var(--text-light); color: var(--text-light);">Ver as 18 Províncias</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiências Autênticas -->
+        <section id="experiencias" class="section alt" aria-labelledby="experiencias-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="experiencias-title" style="color: var(--secondary-color);">Experiências Autênticas</h2>
+                    <p>Atividades imersivas que conectam você à alma de Angola.</p>
+                </div>
+                <div class="experiences">
+                    <article class="experience">
+                        <div class="card-media" style="background-image: url('assets/img/gastronomia.jpg')" role="img" aria-label="Hotéis e Gastronomia em Luanda"></div>
+                        <h3>Hotéis e Gastronomia em Luanda</h3>
+                        <p>Saboreie o mufete, o funge com muamba e o calulu — pratos que contam a história da resistência e criatividade angolana.</p>
+                        <p class="card-meta"><span class="rating">★★★★★</span> <span class="pill">Gastronomia</span></p>
+                    </article>
+                    
+                    <article class="experience">
+                        <div class="card-media" style="background-image: url('assets/img/bai.jpg')" role="img" aria-label="Snorkel na Baía Azul"></div>
+                        <h3>Snorkel na Baía Azul</h3>
+                        <p>Águas cristalinas e vida marinha abundante. Ideal entre maio e setembro.</p>
+                        <p class="card-meta"><span class="rating">★★★☆☆</span> <span class="pill">Aventura</span></p>
+                    </article>
+                    <article class="experience">
+                        <div class="card-media" style="background-image: url('assets/img/Tundavala-7_reduced.jpg')" role="img" aria-label="Trilha do Tundavala com guia local"></div>
+                        <h3>Trilha do Tundavala</h3>
+                        <p>Caminhada segura com guias da comunidade. Vistas épicas e clima fresco no planalto.</p>
+                        <p class="card-meta"><span class="rating">★★★★★</span> <span class="pill">Natureza</span></p>
+                    </article>
+                    <article class="experience">
+                        <div class="card-media" style="background-image: url('assets/img/Circuito\ Cultural\ de\ Luanda.jpg')" role="img" aria-label="Circuito Cultural de Luanda"></div>
+                        <h3>Circuito Cultural de Luanda</h3>
+                        <p>Museu Nacional, Mercado do São Paulo, música ao vivo e artesanato em rafia.</p>
+                        <p class="card-meta"><span class="rating">★★★★☆</span> <span class="pill">Cultura</span></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultura e Tradições -->
+        <section id="cultura" class="section" aria-labelledby="cultura-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="cultura-title">Cultura e Tradições</h2>
+                    <p class="culture-content">Angola é um mosaico de etnias, línguas, ritmos e sabores. Conheça o que define a identidade nacional.</p>
+                </div>
+                <div class="culture-grid">
+                    <article class="culture-card">
+                        <h3>🎵 Música e Dança</h3>
+                        <p>Semba, kizomba, kuduro e rebita: ritmos que conquistaram o mundo.</p>
+                    </article>
+                    <article class="culture-card">
+                        <h3>🍲 Gastronomia</h3>
+                        <p>Pratos como calulu, moamba de galinha e quitaba são símbolos de hospitalidade.</p>
+                    </article>
+                    <article class="culture-card">
+                        <h3>🎭 Festivais</h3>
+                        <p>Karnaval de Luanda e Sumbe a Kwanza — celebrações que unem tradição e modernidade.</p>
+                    </article>
+                    <article class="culture-card">
+                        <h3>🧶 Artesanato</h3>
+                        <p>Esculturas em madeira e tecidos em rafia. Cada peça conta uma história ancestral.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div>
+                <h4>Portal de Turismo de Angola</h4>
+                <p>Celebrando a diversidade, a beleza e a alma do nosso país.</p>
+            </div>
+            <div class="footer-links" aria-label="Links de rodapé">
+                <a href="destinos.html">Destinos</a>
+                <a href="experiencias.html">Experiências</a>
+                <a href="cultura.html">Cultura</a>
+                <a href="provincias.html">Províncias</a>
+                <a href="#informação">Informação útil</a>
+                <a href="experiencias.html">Experiências</a>
+                <a href="login.php">Login</a>
+                <a href="cadastro.php">Cadastro</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+           window.alert('Cria uma conta!');
+    </script>
+</body>
+</html>

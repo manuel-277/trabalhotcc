@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-Ao">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cultura e Tradições de Angola - Portal de Turismo</title>
+    <meta name="description" content="Música, dança, artesanato e história: mergulhe na rica cultura angolana." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="toast" id="toast">Guardado nos favoritos!</div>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Início">
+                <img src="assets/logo1.png" alt="Logotipo do Portal de Turismo de Angola">
+                <span class="brand-text"><strong> Portal de Turismo de Angola</strong></span>
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                
+                <a href="index.html">INÍCIO</a>
+                <a href="provincias.html">PROVÍNCIAS</a>
+                <a href="destinos.html">DESTINOS</a>
+                <a href="#cultura" class="active">CULTURA</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="hero" style="background-image: url('assets/img/turismo\ \(1\).jpg');">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <h1 id="hero-title">O Mosaico Cultural de Angola</h1>
+                    <p>Celebre o Semba, o Kuduro, o artesanato e as tradições que moldam a alma angolana.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ritmos" class="section" aria-labelledby="ritmos-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="ritmos-title">Música e Dança</h2>
+                    <p>Os ritmos que fazem o corpo falar.</p>
+                </div>
+                <div class="culture-grid">
+                    <article class="culture-card">
+                        <h3>Semba</h3>
+                        <p>Ritmo tradicional angolano, pai da Kizomba e com letras que contam histórias cotidianas. Essencial para o Carnaval.</p>
+                    </article>
+                    <article class="culture-card">
+                        <h3>Kizomba</h3>
+                        <p>Dança sensual e elegante, popularizada globalmente. Perfeita para um encontro em Luanda.</p>
+                    </article>
+                    <article class="culture-card">
+                        <h3>Kuduro</h3>
+                        <p>Energético e irreverente, nascido nos anos 80. Representa a juventude e a crítica social urbana.</p>
+                    </article>
+                    <article class="culture-card">
+                        <h3>Rebita</h3>
+                        <p>Dança de salão antiga, um legado da época colonial, ainda preservada em festas tradicionais.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="arte" class="section alt" aria-labelledby="arte-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="arte-title" style="color: var(--green);">Arte e Símbolos Nacionais</h2>
+                    <p>Da madeira à rafia, a arte angolana em exibição.</p>
+                </div>
+                <div class="grid">
+                     <article class="card" style="grid-column: span 6;">
+                        <div class="card-media" style="background-image: url('assets/img/mascara.jpg'); height: 300px;" role="img" aria-label="Máscaras Artesanais"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">A Máscara Mwana Pwo</h3>
+                            <p>Símbolo da beleza feminina e fertilidade do povo Tchokwe. Um must-see nos museus.</p>
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="showDetails('Máscara Mwana Pwo')">Visitar Museu</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card" style="grid-column: span 6;">
+                        <div class="card-media" style="background-image: url('assets/img/pensadora.jpg'); height: 300px;" role="img" aria-label="O Pensador Angolano"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">O Pensador (Pensador Angolano)</h3>
+                            <p>Escultura que representa a sabedoria e a filosofia do povo. Tornou-se um símbolo nacional de Angola.</p>
+                            <div class="card-actions">
+                                <button class="btn btn-outline" onclick="saveToFavorites('Símbolo Pensador')">Guardar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+                <div class="container footer-inner">
+            <div>
+                <h4>Portal de Turismo de Angola</h4>
+                <p>Celebrando a diversidade, a beleza e a alma do nosso país.</p>
+            </div>
+            <div class="footer-links" aria-label="Links de rodapé">
+                <a href="destinos.html">Destinos</a>
+                <a href="experiencias.html">Experiências</a>
+                <a href="cultura.html">Cultura</a>
+                <a href="provincias.html">Províncias</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="#informação">Informação útil</a>
+                <a href="experiencias.html">Experiências</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

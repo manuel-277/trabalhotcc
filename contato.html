@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-Ao">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contato | Portal de Turismo de Angola</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--gap);
+        }
+        .contact-info, .contact-form-wrap {
+            padding: 30px;
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .contact-info h3 {
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+        .contact-form-wrap input, .contact-form-wrap textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        .contact-form-wrap textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <main role="main">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Entre em Contato</h2>
+                    <p>Tem dúvidas ou sugestões? Envie-nos uma mensagem.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Informações</h3>
+                        <p><i class="icon fas fa-map-marker-alt"></i> Luanda, Angola</p>
+                        <p><i class="icon fas fa-envelope"></i> info@turismoangola.ao</p>
+                        <p><i class="icon fas fa-phone"></i> +244 9XX XXX XXX</p>
+                    </div>
+                    <div class="contact-form-wrap">
+                        <form action="mensagem.php" method="POST">
+                            <input type="text" name="name" placeholder="Seu Nome" required>
+                            <input type="email" name="email" placeholder="Seu Email" required>
+                            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    </body>
+</html>

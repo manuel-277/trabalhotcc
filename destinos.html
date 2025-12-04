@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Destinos Turísticos de Angola - Portal de Turismo</title>
+    <meta name="description" content="Explore os destinos naturais e históricos mais impressionantes de Angola: Quedas, Miradouros, Praias e Desertos." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ======================================================================
+           1. Variáveis & Reset Básico
+           ====================================================================== */
+        :root {
+            --primary-color: #004d40;
+            --secondary-color: #159f5f;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #f9fafb;
+            --background-light: #ffffff;
+            --background-alt: #f3f4f6;
+            --border-color: #e5e7eb;
+            --gap: 20px;
+            --max-width: 1200px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--background-light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* ======================================================================
+           2. Tipografia e Seções
+           ====================================================================== */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section.alt {
+            background-color: var(--background-alt);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: #4b5563;
+        }
+
+        /* ======================================================================
+           3. Cabeçalho com Menu Hambúrguer
+           ====================================================================== */
+        .site-header {
+            background-color: #0d8a56;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .brand img {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        .brand-text {
+            font-size: 1.25rem;
+            white-space: nowrap;
+        }
+
+        /* === Botão Hambúrguer === */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1001;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* === Navegação Principal === */
+        .main-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            margin-left: 25px;
+            padding: 5px 0;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .main-nav a.active {
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: white;
+        }
+
+        /* === Responsividade: Menu Hambúrguer === */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .main-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 75%;
+                max-width: 300px;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 80px;
+                align-items: center;
+                transition: right 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+                z-index: 999;
+            }
+
+            .main-nav.active {
+                right: 0;
+            }
+
+            .main-nav a {
+                color: var(--text-light);
+                margin: 15px 0;
+                font-size: 1.1rem;
+                padding: 10px 0;
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-nav a:hover,
+            .main-nav a.active {
+                color: var(--accent-color);
+                background-color: rgba(21, 159, 95, 0.2);
+                border-radius: 6px;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+        }
+
+        /* ======================================================================
+           4. Hero Section
+           ====================================================================== */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            height: 50vh;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+
+        #hero-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            #hero-title {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* ======================================================================
+           5. Cartões de Destino (Grid)
+           ====================================================================== */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--gap);
+        }
+
+        .card {
+            grid-column: span 4;
+            background-color: var(--background-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-media {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .card-meta {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #6b7280;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill {
+            background-color: var(--background-alt);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .rating {
+            color: var(--accent-color);
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .card-actions {
+            padding: 0 20px 20px;
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        @media (max-width: 960px) {
+            .card {
+                grid-column: span 6;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                grid-column: span 12;
+            }
+        }
+
+        /* ======================================================================
+           6. Mapa
+           ====================================================================== */
+        .map-wrap {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ======================================================================
+           7. Botões
+           ====================================================================== */
+        .btn {
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            border: 2px solid transparent;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+        }
+
+        /* ======================================================================
+           8. Rodapé
+           ====================================================================== */
+        .site-footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-inner h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        /* ======================================================================
+           9. Toast
+           ====================================================================== */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: var(--text-light);
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 101;
+            left: 50%;
+            bottom: 30px;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from { bottom: 0; opacity: 0; }
+            to { bottom: 30px; opacity: 1; }
+        }
+
+        @keyframes fadeout {
+            from { opacity: 1; }
+            to { bottom: 0; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toast" id="toast">Guardado nos favoritos!</div>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Início">
+                <img src="assets/logo1.png" alt="Logotipo do Portal de Turismo de Angola">
+                <span class="brand-text"><strong> Portal de Turismo de Angola</strong></span>
+            </a>
+
+            <!-- Botão Hambúrguer -->
+            <button class="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Navegação -->
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html">INÍCIO</a>
+                <a href="#destinos" class="active">DESTINOS</a>
+                <a href="cultura.html">CULTURA</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="hero" style="background-image: url('assets/img/turismo\ \(1\).jpg');">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <h1 id="hero-title">Os Lugares Imperdíveis de Angola</h1>
+                    <p>Praias, montanhas e monumentos históricos. Comece aqui a planear a sua aventura.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="destinos" class="section" aria-labelledby="destinos-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="destinos-title">Destaques e Pontos Turísticos</h2>
+                    <p>Locais imperdíveis que celebram a diversidade geográfica e cultural de Angola.</p>
+                </div>
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/cascade-2897984.jpg')" role="img" aria-label="Quedas de Kalandula"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Quedas de Kalandula</h3>
+                            <div class="card-meta">
+                                <span class="pill">Malanje</span>
+                                <span class="pill">Natureza • Aventura</span>
+                                <span class="rating">★★★★★</span>
+                                <span class="price">desde $15</span>
+                            </div>
+                            <p>Uma das maiores cataratas da África, símbolo natural de Angola. Melhores vistas após a estação chuvosa.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Quedas de Kalandula')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Quedas de Kalandula')">Guardar</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/Miradouro\ da\ Lua.jpg')" role="img" aria-label="Miradouro da Lua"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Miradouro da Lua</h3>
+                            <div class="card-meta">
+                                <span class="pill">Luanda</span>
+                                <span class="pill">Natureza • Fotografia</span>
+                                <span class="rating">★★★★☆</span>
+                                <span class="price">Entrada gratuita</span>
+                            </div>
+                            <p>Formações geológicas que lembram paisagens lunares. Melhor horário: fim de tarde com luz dourada.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Miradouro da Lua')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Miradouro da Lua')">Guardar</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/Tundavala-7_reduced.jpg')" role="img" aria-label="Tundavala"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Tundavala</h3>
+                            <div class="card-meta">
+                                <span class="pill">Huíla</span>
+                                <span class="pill">Natureza • Aventura</span>
+                                <span class="rating">★★★★★</span>
+                                <span class="price">Gratuito</span>
+                            </div>
+                            <p>Desfiladeiro imponente próximo ao Lubango, com miradouros espetaculares sobre o planalto angolano.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Tundavala')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Tundavala')">Guardar</button>
+                        </div>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/Fortaleza\ de\ São\ Miguel.jpg')" role="img" aria-label="Fortaleza de São Miguel"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Fortaleza de São Miguel</h3>
+                            <div class="card-meta">
+                                <span class="pill">Luanda</span>
+                                <span class="pill">Cultura • História</span>
+                                <span class="rating">★★★★☆</span>
+                                <span class="price">desde $10</span>
+                            </div>
+                            <p>Fortaleza do século XVI, hoje museu com vistas panorâmicas. Ideal para aprofundar a história de Angola.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Fortaleza de São Miguel')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Fortaleza de São Miguel')">Guardar</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/Deserto\ do\ Namibe.jpg')" role="img" aria-label="Deserto do Namibe"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Deserto do Namibe</h3>
+                            <div class="card-meta">
+                                <span class="pill">Namibe</span>
+                                <span class="pill">Natureza • Aventura</span>
+                                <span class="rating">★★★★☆</span>
+                                <span class="price">Gratuito</span>
+                            </div>
+                            <p>Dunas, vida rara e a Welwitschia mirabilis — planta viva há mais de 1.500 anos. Leve água e proteção solar.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Deserto do Namibe')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Deserto do Namibe')">Guardar</button>
+                        </div>
+                    </article>
+                    
+                     <article class="card">
+                        <div class="card-media" style="background-image: url('assets/img/greece-4091412.jpg')" role="img" aria-label="Baía Azul"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Baía Azul</h3>
+                            <div class="card-meta">
+                                <span class="pill">Benguela</span>
+                                <span class="pill">Praia • Relax</span>
+                                <span class="rating">★★★★★</span>
+                                <span class="price">Gratuito</span>
+                            </div>
+                            <p>Praia famosa de Benguela, águas calmas e cenário perfeito para famílias e descanso.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline" onclick="showDetails('Baía Azul')">Ver detalhes</button>
+                            <button class="btn btn-primary" onclick="saveToFavorites('Baía Azul')">Guardar</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mapa" class="section alt" aria-labelledby="mapa-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="mapa-title">Mapa interativo dos Destinos</h2>
+                    <p>Localize os principais pontos turísticos de Angola.</p>
+                </div>
+                <div class="map-wrap">
+                    <iframe
+                        class="map-frame"
+                        title="Mapa de Angola"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=10.0,-18.0,21.5,-4.0&layer=mapnik"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div>
+                <h4>Portal de Turismo de Angola</h4>
+                <p>Celebrando a diversidade, a beleza e a alma do nosso país.</p>
+            </div>
+            <div class="footer-links" aria-label="Links de rodapé">
+                <a href="destinos.html">Destinos</a>
+                <a href="experiencias.html">Experiências</a>
+                <a href="cultura.html">Cultura</a>
+                <a href="#informação">Informação útil</a>
+                <a href="#sobre">Sobre</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // === Favoritos e Toast ===
+        function saveToFavorites(title) {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            if (!favorites.includes(title)) {
+                favorites.push(title);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                showToast();
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        function showDetails(place) {
+            const modal = document.createElement('div');
+            modal.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 2000;">
+                    <div style="background: white; padding: 25px; border-radius: 12px; max-width: 90%; width: 500px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                        <h3 style="color: #004d40; margin-bottom: 15px;">${place}</h3>
+                        <p>Hotéis, passeios, dicas e vídeos em breve!</p>
+                        <button onclick="this.parentElement.parentElement.remove()" 
+                            style="margin-top: 15px; padding: 8px 20px; background: #159f5f; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // === Menu Hambúrguer ===
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('.main-nav');
+
+            if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+                    hamburger.setAttribute('aria-expanded', !expanded);
+                });
+
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('active');
+                        hamburger.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
